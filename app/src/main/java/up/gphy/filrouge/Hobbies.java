@@ -1,5 +1,6 @@
 package up.gphy.filrouge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -74,9 +75,8 @@ public class Hobbies extends AppCompatActivity {
     }
 
     public void GoPage3(View view) {
-
-//        Intent intent = new Intent(this, Page2.class);
-//        startActivity(intent);
-        finish();
+        Log.d(TAG,"Go page 3");
+        Intent intent = new Intent(this, Lifestyle.class);
+        startActivity(intent);
     }
 }

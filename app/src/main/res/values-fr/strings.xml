@@ -34,4 +34,10 @@
     <string name="male">Homme</string>
     <string name="non_binary">Non binaire</string>
     <string name="next_questions">Questions suivantes</string>
+    <string name="_12_what_is_your_diet">"12 - Quel est votre régime alimentaire ? "</string>
+    <string name="_13_do_you_feel_lonely">"13 - Vous sentez vous seul ? "</string>
+    <string name="_14_how_many_times_do_you_brush_your_teeth_per_day">"14 - Combien de fois vous vous lavez les dents par jour ? "</string>
+    <string name="_15_how_long_do_you_sleep_on_average_per_night">"15 - Combien de temps dormez-vous en moyenne par nuit ? "</string>
+    <string name="_16_do_you_resalate_your_dishes">"16 - Resalez-vous vos plats ? "</string>
+    <string name="_17_what_s_your_bmi">"17 - Quelle est votre IMC ? "</string>
 </resources>

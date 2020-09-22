@@ -33,4 +33,11 @@
     <string name="male">Male</string>
     <string name="non_binary">Non binary</string>
     <string name="next_questions">Next questions</string>
+    <string name="_12_what_is_your_diet">12 - What is your diet ?</string>
+    <string name="_13_do_you_feel_lonely">13 - Do you feel lonely?</string>
+    <string name="_14_how_many_times_do_you_brush_your_teeth_per_day">14 - How many times do you brush your teeth per day?</string>
+    <string name="_15_how_long_do_you_sleep_on_average_per_night">15 - How long do you sleep on average per night ?</string>
+    <string name="textview" translatable="false">TextView</string>
+    <string name="_16_do_you_resalate_your_dishes">16 - Do you resalate your dishes?</string>
+    <string name="_17_what_s_your_bmi">17 - What\'s your BMI?</string>
 </resources>

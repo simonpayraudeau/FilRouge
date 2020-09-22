@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rep12">
+        <item>Végan</item>
+        <item>Végétarien</item>
+        <item>Flexitarien</item>
+        <item>Viandard</item>
+        <item>Fast-food for life</item>
+    </string-array>
+</resources>
+

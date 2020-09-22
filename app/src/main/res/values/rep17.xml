@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rep17">
+        <item>Moins de 18.5</item>
+        <item>18.5 \- 25</item>
+        <item>25 \- 30</item>
+        <item>25 \- 30</item>
+        <item>plus de 35</item>
+    </string-array>
+</resources>
