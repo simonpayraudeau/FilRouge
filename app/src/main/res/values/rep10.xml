@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rep10">
+        <item>Comme pour les légumes 5 fois par jourEn couple (tous les jours)</item>
+        <item>Tous les jours</item>
+        <item>Toutes les semaines</item>
+        <item>Tous les mois</item>
+        <item>Tous les ans</item>
+        <item>Je vais installer tinder</item>
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rep9">
+    <item>En couple (tous les jours)</item>
+    <item>Tchatcheur (Je refuse jamais un verre)</item>
+    <item>Fêtard (En soirée)</item>
+    <item>Célibataire (Rarement)</item>
+    <item>Puceau (C’est quoi l’alcool?) </item>
+    </string-array>
+</resources>

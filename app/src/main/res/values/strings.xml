@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FilRouge</string>
+    <string name="guess_my_death">Guess my Death</string>
+    <string name="start">Start</string>
+    <string name="simulation_of_death_date">Simulation of death date</string>
+    <string name="_5_do_you_do_sport">6 - Do you do sport ?</string>
+    <string name="your_hobbies">Your Hobbies</string>
+    <string name="result"><![CDATA[<result>]]></string>
+    <string name="_6_how_much_time_do_you_spend_watching_tv_netflix_per_week">7 - How much time do you spend watching TV / Netflix per week?</string>
+    <string name="_7_do_you_smoke">8 - Do you smoke ?</string>
+    <string name="_9_what_is_your_relationship_with_alcohol">9 - What is your relationship with alcohol ?</string>
+    <string name="_10_are_you_fucking_ingrid">10 - Are you fucking Ingrid?</string>
+    <string name="resultchoose"><![CDATA[<resultchoose>]]></string>
+    <string name="everyday">Everyday</string>
+    <string name="only_in_party">Only in party</string>
+    <string name="never">Never</string>
+    <string name="_11_do_you_like_travelling">11 - Do you like travelling ?</string>
+    <string name="next_page">Next page</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="your_current_lifestyle">Your current lifestyle</string>
+</resources>
