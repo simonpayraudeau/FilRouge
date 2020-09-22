@@ -20,4 +20,18 @@
     <string name="yes">Oui</string>
     <string name="no">Non</string>
     <string name="your_current_lifestyle">Ton style de vie actuel</string>
+    <string name="answer_to_the_following_questions">Réponds aux questions suivantes</string>
+    <string name="_5_where_do_you">5 - Où habites-tu ?</string>
+    <string name="let_s_get_to_know">Faisons connaissance</string>
+    <string name="_3_are_you_left_or_right_handed">3 - Es-tu gaucher ou droitier ?</string>
+    <string name="_4_are_you_stressed_out">4 - Es-tu stressé ?</string>
+    <string name="_1_which_gender_are_you">1 - Quel est ton genre ?</string>
+    <string name="_2_what_is_your_nationality">2 - Quelle est ta notionalité ?</string>
+    <string name="left_handed">Gaucher</string>
+    <string name="right_handed">Droitier</string>
+    <string name="ambidextrous">Ambidextre</string>
+    <string name="female">Femme</string>
+    <string name="male">Homme</string>
+    <string name="non_binary">Non binaire</string>
+    <string name="next_questions">Questions suivantes</string>
 </resources>

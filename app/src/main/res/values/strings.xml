@@ -19,4 +19,18 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="your_current_lifestyle">Your current lifestyle</string>
+    <string name="answer_to_the_following_questions">Answer to the following questions</string>
+    <string name="_5_where_do_you">5 - Where do you ?</string>
+    <string name="let_s_get_to_know">Let\'s get to know :</string>
+    <string name="_3_are_you_left_or_right_handed">3 - Are you left or right handed ?</string>
+    <string name="_4_are_you_stressed_out">4 - Are you stressed out ?</string>
+    <string name="_1_which_gender_are_you">1 - Which gender are you ?</string>
+    <string name="_2_what_is_your_nationality">2 - What is your nationality ?</string>
+    <string name="left_handed">Left-handed</string>
+    <string name="right_handed">Right-handed</string>
+    <string name="ambidextrous">Ambidextrous</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="non_binary">Non binary</string>
+    <string name="next_questions">Next questions</string>
 </resources>

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void doConnect(View view) {
         Log.d(TAG,"do connect");
-        Intent intent = new Intent(this, Hobbies.class);
+        Intent intent = new Intent(this, AboutYou.class);
         startActivity(intent);
     }
 }
