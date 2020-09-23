@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">FilRouge</string>
-    <string name="guess_my_death">Devine ta date de mort</string>
     <string name="start">Commencer</string>
-    <string name="simulation_of_death_date">Simulateur d\'espérance de vie</string>
     <string name="_5_do_you_do_sport">6 - Faîtes vous du sport ?</string>
     <string name="your_hobbies">Tes Hobbies</string>
     <string name="result">Résultat</string>

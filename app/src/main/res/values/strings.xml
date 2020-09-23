@@ -1,8 +1,7 @@
 <resources>
     <string name="app_name">FilRouge</string>
-    <string name="guess_my_death">Guess my Death</string>
+    <string name="guess_my_death" translatable="false">Guess my Death</string>
     <string name="start">Start</string>
-    <string name="simulation_of_death_date">Simulation of death date</string>
     <string name="_5_do_you_do_sport">6 - Do you do sport ?</string>
     <string name="your_hobbies">Your Hobbies</string>
     <string name="result"><![CDATA[<result>]]></string>
