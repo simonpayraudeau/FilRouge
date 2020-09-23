@@ -40,4 +40,6 @@
     <string name="_15_how_long_do_you_sleep_on_average_per_night">"15 - Combien de temps dormez-vous en moyenne par nuit ? "</string>
     <string name="_16_do_you_resalate_your_dishes">"16 - Resalez-vous vos plats ? "</string>
     <string name="_17_what_s_your_bmi">"17 - Quelle est votre IMC ? "</string>
+    <string name="you_will_die_at">"Vous allez mourir à : "</string>
+    <string name="rank_your_experience">"Évaluez votre expérience "</string>
 </resources>

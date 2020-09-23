@@ -1,15 +1,16 @@
 package up.gphy.filrouge;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.icu.text.CaseMap;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
-import android.widget.Space;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AboutYou extends AppCompatActivity {
 
@@ -60,5 +61,11 @@ public class AboutYou extends AppCompatActivity {
         spinrep5AY = findViewById(R.id.spinrep5);
         btnnextAY = findViewById(R.id.bnextQ1);
 
+    }
+
+    public void GoPage2(View view) {
+        Log.d(TAG,"Go page 2");
+        Intent intent = new Intent(this, Hobbies.class);
+        startActivity(intent);
     }
 }

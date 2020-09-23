@@ -40,4 +40,8 @@
     <string name="textview" translatable="false">TextView</string>
     <string name="_16_do_you_resalate_your_dishes">16 - Do you resalate your dishes?</string>
     <string name="_17_what_s_your_bmi">17 - What\'s your BMI?</string>
+    <string name="age" translatable="false"><![CDATA[<age>]]></string>
+    <string name="rank_your_experience">Rank your experience</string>
+    <string name="phrase" translatable="false"><![CDATA[<phrase>]]></string>
+    <string name="you_will_die_at">You will die at :</string>
 </resources>

@@ -245,6 +245,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="casual"
+                android:onClick="GoPage2"
                 android:text="@string/next_questions"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
