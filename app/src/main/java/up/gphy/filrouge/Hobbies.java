@@ -67,6 +67,8 @@ public class Hobbies extends AppCompatActivity {
         txtrep6 = findViewById(R.id.txtrep6);
         txtrep7 = findViewById(R.id.txtrep7);
 
+        rbrep8a.setChecked(true);
+
         Log.d(TAG,"Fin création");
 
         Log.d(TAG, "recuperer age");
@@ -76,6 +78,38 @@ public class Hobbies extends AppCompatActivity {
             age = Integer.parseInt(str);
             Log.d(TAG, "age ok");
         }
+
+        setSkrep6();
+        skrep6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                setSkrep6();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                setSkrep6();
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                setSkrep6();
+            }
+        });
+
+        setSkrep7();
+        skrep7.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                setSkrep7();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                setSkrep7();
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                setSkrep7();
+            }
+        });
 
     }
 
@@ -171,6 +205,38 @@ public class Hobbies extends AppCompatActivity {
             age = age-3;
         }
 
+    }
+
+    public void setSkrep6(){
+        if(skrep6.getProgress()==0){
+            txtrep6.setText("sp.. What ?");
+        }else if (skrep6.getProgress()==1){
+            txtrep6.setText("1-2 per week");
+        }else if (skrep6.getProgress()==2){
+            txtrep6.setText("3-4 per week");
+        } else if (skrep6.getProgress()==3){
+            txtrep6.setText("Everyday");
+        }
+    }
+
+    public void setSkrep7(){
+        if(skrep7.getProgress()==0){
+            txtrep7.setText("Never");
+        }else if (skrep7.getProgress()==1){
+            txtrep7.setText("Only during week-end");
+        }else if (skrep7.getProgress()==2){
+            txtrep7.setText("Not every day");
+        } else if (skrep7.getProgress()==3){
+            txtrep7.setText("Only during week");
+        } else if (skrep7.getProgress()==4){
+            txtrep7.setText("One hour per day");
+        } else if (skrep7.getProgress()==5){
+            txtrep7.setText("Three hours per day");
+        } else if (skrep7.getProgress()==6){
+            txtrep7.setText("Six hours per day");
+        } else if (skrep7.getProgress()==7){
+            txtrep7.setText("Professional bingewatcher (Marathonian)");
+        }
     }
 
 }

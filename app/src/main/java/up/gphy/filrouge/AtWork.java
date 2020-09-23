@@ -46,6 +46,8 @@ public class AtWork extends AppCompatActivity {
         spinr20 = findViewById(R.id.spinner20);
         btnSR = findViewById(R.id.btnEnd);
 
+        rbr19a.setChecked(true);
+
         Log.d(TAG, "recuperer age");
         Intent intent = getIntent();
         if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”

@@ -12,7 +12,7 @@
         android:id="@+id/txtcat2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="68dp"
         android:fontFamily="casual"
         android:shadowColor="#FF0000"
         android:text="@string/guess_my_death"
@@ -20,10 +20,12 @@
         android:textColor="#E10000"
         android:textSize="36sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnStart"
@@ -48,10 +50,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="33dp"
         android:shadowColor="#FFFFFF"
-        android:text="@string/simulation_of_death_date"
+        android:text="@string/life_expectancy_simulator"
         android:textColor="#983B3B"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcat2" />
+        app:layout_constraintTop_toBottomOf="@+id/txtcat2"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
