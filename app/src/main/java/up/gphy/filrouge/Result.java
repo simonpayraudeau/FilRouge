@@ -50,15 +50,15 @@ public class Result extends AppCompatActivity {
         }else if (age <25){
             txtphrase.setText("Profitez c’est que du bonus");
         }else if (age <40){
-            txtphrase.setText("Tu as la même hygiène de vie qui Benoit Paire toi");
+            txtphrase.setText("Tu as la même hygiène de vie que Benoit Paire toi");
         }else if (age <60){
             txtphrase.setText("C’est con de cotiser toute sa vie pour ne pas en profiter");
         }else if (age <80){
             txtphrase.setText("Tu auras le temps de faire du jardin");
         }else if (age <100){
             txtphrase.setText("Inscris toi en maison de retraite");
-        }else if (age >1000){
-            txtphrase.setText("Tu dois descendre de la tortue");
+        }else if (age >100){
+            txtphrase.setText("Tu dois descendre de la tortue toi");
         }
     }
 }
