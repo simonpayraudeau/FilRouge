@@ -1,5 +1,6 @@
 package up.gphy.filrouge;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,8 +69,8 @@ public class Lifestyle extends AppCompatActivity {
 
     public void GoPage3(View view) {
         Log.d(TAG,"Go page 4");
-//        Intent intent = new Intent(this, AtWork.class);
-//        startActivity(intent);
+        Intent intent = new Intent(this, AtWork.class);
+        startActivity(intent);
     }
 
 }

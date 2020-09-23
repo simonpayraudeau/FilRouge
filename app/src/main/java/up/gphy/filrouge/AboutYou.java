@@ -63,7 +63,7 @@ public class AboutYou extends AppCompatActivity {
 
     }
 
-    public void GoPage2(View view) {
+    public void goPage2(View view) {
         Log.d(TAG,"Go page 2");
         Intent intent = new Intent(this, Hobbies.class);
         startActivity(intent);

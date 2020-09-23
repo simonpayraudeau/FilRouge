@@ -23,7 +23,7 @@
     <string name="_5_where_do_you">5 - Where do you ?</string>
     <string name="let_s_get_to_know">Let\'s get to know :</string>
     <string name="_3_are_you_left_or_right_handed">3 - Are you left or right handed ?</string>
-    <string name="_4_are_you_stressed_out">4 - Are you stressed out ?</string>
+    <string name="_4_are_you_stressed_by_nature">4 - Are you stressed by nature ?</string>
     <string name="_1_which_gender_are_you">1 - Which gender are you ?</string>
     <string name="_2_what_is_your_nationality">2 - What is your nationality ?</string>
     <string name="left_handed">Left-handed</string>
@@ -44,4 +44,11 @@
     <string name="rank_your_experience">Rank your experience</string>
     <string name="phrase" translatable="false"><![CDATA[<phrase>]]></string>
     <string name="you_will_die_at">You will die at :</string>
+    <string name="at_work">At work :</string>
+    <string name="_18_do_you_have_a_driving_licence">18 - Do you have a driving licence ?</string>
+    <string name="_19_do_you_work_sitting_down_or_standing_up">19 - Do you work sitting down or standing up ?</string>
+    <string name="sitting_down">Sitting down</string>
+    <string name="standing_up">Standing up</string>
+    <string name="_20_how_much_do_you_earn">20 - How much do you earn ?</string>
+    <string name="show_result">Show result</string>
 </resources>

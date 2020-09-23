@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <string-array name="array_rep20">
+        <item>Student</item>
+        <item>Minimum wage earner</item>
+        <item>Unemployed</item>
+        <item>Minimum wage \003C x \003C 2000</item>
+        <item> 2k \003C x \003C 3K</item>
+        <item>3k \003C x \003C 5K</item>
+        <item> \003E 5K</item>
+    </string-array>
+</resources>

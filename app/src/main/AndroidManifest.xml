@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Result"></activity>
+        <activity android:name=".AtWork"></activity>
         <activity android:name=".AboutYou" />
         <activity android:name=".Lifestyle" />
         <activity android:name=".Hobbies" />
