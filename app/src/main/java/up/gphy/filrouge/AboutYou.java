@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -35,6 +36,7 @@ public class AboutYou extends AppCompatActivity {
     private Button btnnextAY;
 
     public static String TAG = "GMD About You";// Identifiant pour les messages de log
+    private Integer age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +65,85 @@ public class AboutYou extends AppCompatActivity {
 
     }
 
+    public void toast(String msg) {
+        Toast.makeText(this, msg,Toast.LENGTH_SHORT).show();
+    }
+
     public void goPage2(View view) {
+        calculAge(view);
         Log.d(TAG,"Go page 2");
         Intent intent = new Intent(this, Hobbies.class);
+        intent.putExtra("age", age.toString());
         startActivity(intent);
     }
+
+    public void calculAge(android.view.View v) {
+        Log.d(TAG,"Start quizz");
+
+        //Question1
+        if (rbrep1aAY.isChecked()) {
+            age = 85;
+        }
+        else if (rbrep1bAY.isChecked()){
+            age=80;
+        }
+        else if (rbrep1cAY.isChecked()) {
+            age = 40;
+        }
+
+        //Question2
+        Integer value2 = spinrep2AY.getSelectedItemPosition();
+        if (value2==0) {
+            age = age;
+        }
+        else if (value2==1){
+            age = age -7;
+        }
+        else if (value2==2){
+            age = age -20;
+        }
+        else if (value2==3){
+            age = age -5;
+        }
+        else if (value2==4){
+            age = age +3;
+        }
+
+        //Question3
+        if (rbrep3aAY.isChecked()) {
+            age = age -5;
+        }
+        else if (rbrep3bAY.isChecked()){
+            age = age +4;
+        }
+        else if (rbrep3cAY.isChecked()){
+            age = age;
+        }
+
+        //Question4
+        if(swrep4AY.isChecked()){
+            age = age +5;
+        }else{
+            age = age -5;
+        }
+
+        //Question5
+        Integer value5 = spinrep5AY.getSelectedItemPosition();
+        if(value5==0){
+            age= age -5;
+        } else if (value5==1){
+            age= age -2;
+        } else if (value5==2){
+            age= age ;
+        } else if (value5==3){
+            age= age +2;
+        } else if (value5==4){
+            age= age -20;
+        } else if (value5==5){
+            age = age +5;
+        }
+        Log.d(TAG,"Point après page about you : " +age.toString());
+    }
+
 }
+

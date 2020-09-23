@@ -1,7 +1,5 @@
 package up.gphy.filrouge;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +9,8 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class AtWork extends AppCompatActivity {
 
@@ -27,6 +27,7 @@ public class AtWork extends AppCompatActivity {
     private Button btnSR;
 
     public static String TAG = "GMD At work";// Identifiant pour les messages de log
+    private Integer age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +45,57 @@ public class AtWork extends AppCompatActivity {
         txtquest20 = findViewById(R.id.txtquest20);
         spinr20 = findViewById(R.id.spinner20);
         btnSR = findViewById(R.id.btnEnd);
+
+        Log.d(TAG, "recuperer age");
+        Intent intent = getIntent();
+        if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            String str = intent.getStringExtra("age"); // récupère la valeur associée à la clé
+            age = Integer.parseInt(str);
+        }
     }
 
     public void goResult(View view) {
-        Log.d(TAG,"Go page end");
+        calculAge(view);
+        Log.d(TAG,"Go Result");
         Intent intent = new Intent(this, Result.class);
+        intent.putExtra("age", age.toString());
         startActivity(intent);
+    }
+
+    public void calculAge(android.view.View v) {
+        Log.d(TAG, "At Work");
+
+        //Question18
+        if(swr18.isChecked()){
+            age = age -5;
+        }else{
+            age = age;
+        }
+
+        //Question19
+        if (rbr19a.isChecked()) {
+            age = age-3;
+        }
+        else if (rbr19b.isChecked()){
+            age = age +3;
+        }
+
+        //Question20
+        Integer value20 = spinr20.getSelectedItemPosition();
+        if (value20==0) {
+            age = age -5;
+        }
+        else if (value20==1){
+            age = age;
+        }
+        else if (value20==2){
+            age = age -15;
+        }
+        else if (value20==3){
+            age = age +5;
+        }
+
+        Log.d(TAG,"Point après page at work : " +age.toString());
+
     }
 }

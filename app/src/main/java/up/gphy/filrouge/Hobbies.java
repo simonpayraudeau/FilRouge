@@ -74,6 +74,7 @@ public class Hobbies extends AppCompatActivity {
         if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
             String str = intent.getStringExtra("age"); // récupère la valeur associée à la clé
             age = Integer.parseInt(str);
+            Log.d(TAG, "age ok");
         }
 
     }
