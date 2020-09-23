@@ -75,7 +75,6 @@ public class Lifestyle extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 setSkRep14();
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
                 setSkRep14();
@@ -222,13 +221,13 @@ public class Lifestyle extends AppCompatActivity {
         if(skrep15.getProgress()==0){
             txtrep15.setText("0 #thuglife");
         }else if (skrep15.getProgress()==1){
-            txtrep14.setText("1-5");
+            txtrep15.setText("1-5");
         }else if (skrep15.getProgress()==2){
-            txtrep14.setText("6-7");
+            txtrep15.setText("6-7");
         } else if (skrep15.getProgress()==3){
-            txtrep14.setText("8-9");
+            txtrep15.setText("8-9");
         } else if (skrep15.getProgress()==4){
-            txtrep14.setText("10 et +");
+            txtrep15.setText("10 et +");
         }
     }
 
