@@ -69,6 +69,42 @@ public class Lifestyle extends AppCompatActivity {
             age = Integer.parseInt(str);
         }
 
+        setSkRep14();
+        skrep14.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                setSkRep14();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                setSkRep14();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                setSkRep14();
+            }
+        });
+
+        setSkrep15();
+        skrep15.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                setSkrep15();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                setSkrep15();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                setSkrep15();
+            }
+        });
+
     }
 
     public void toast(String msg) {
@@ -168,6 +204,33 @@ public class Lifestyle extends AppCompatActivity {
             age = age -6;
         }
         Log.d(TAG,"Point après page lifestyle : " + age.toString());
-
     }
+
+    public void setSkRep14(){
+        if(skrep14.getProgress()==0){
+            txtrep14.setText("0");
+        }else if (skrep14.getProgress()==1){
+            txtrep14.setText("1");
+        }else if (skrep14.getProgress()==2){
+            txtrep14.setText("2");
+        } else if (skrep14.getProgress()==3){
+            txtrep14.setText("3 & +");
+        }
+    }
+
+    public void setSkrep15(){
+        if(skrep15.getProgress()==0){
+            txtrep15.setText("0 #thuglife");
+        }else if (skrep15.getProgress()==1){
+            txtrep14.setText("1-5");
+        }else if (skrep15.getProgress()==2){
+            txtrep14.setText("6-7");
+        } else if (skrep15.getProgress()==3){
+            txtrep14.setText("8-9");
+        } else if (skrep15.getProgress()==4){
+            txtrep14.setText("10 et +");
+        }
+    }
+
+
 }

@@ -63,6 +63,9 @@ public class AboutYou extends AppCompatActivity {
         spinrep5AY = findViewById(R.id.spinrep5);
         btnnextAY = findViewById(R.id.bnextQ1);
 
+        rbrep3aAY.setChecked(true);
+        rbrep1aAY.setChecked(true);
+
     }
 
     public void toast(String msg) {

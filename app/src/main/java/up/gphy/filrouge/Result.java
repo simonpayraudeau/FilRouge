@@ -38,6 +38,8 @@ public class Result extends AppCompatActivity {
             resultat(null);
         }
 
+
+
     }
 
     public void resultat(android.view.View v) {
