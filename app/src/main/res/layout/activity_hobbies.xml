@@ -209,7 +209,7 @@
 
             <Spinner
                 android:id="@+id/spirep10"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
@@ -242,6 +242,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:thumbTint="#FFFFFF"
+                android:trackTint="#FFFFFF"
                 app:layout_constraintEnd_toStartOf="@+id/txtno"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/txtyes"
