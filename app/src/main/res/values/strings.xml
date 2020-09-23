@@ -8,7 +8,6 @@
     <string name="_6_how_much_time_do_you_spend_watching_tv_netflix_per_week">7 - How much time do you spend watching TV / Netflix per week?</string>
     <string name="_7_do_you_smoke">8 - Do you smoke ?</string>
     <string name="_9_what_is_your_relationship_with_alcohol">9 - What is your relationship with alcohol ?</string>
-    <string name="_10_are_you_fucking_ingrid">10 - Are you fucking Ingrid?</string>
     <string name="resultchoose"><![CDATA[<resultchoose>]]></string>
     <string name="everyday">Everyday</string>
     <string name="only_in_party">Only in party</string>
@@ -53,4 +52,5 @@
     <string name="exit">Exit</string>
     <string name="_5_where_do_you_live">5 - Where do you live ?</string>
     <string name="life_expectancy_simulator">Life expectancy simulator</string>
+    <string name="_10_do_you_practice_coitus">10 - Do you practice coitus?</string>
 </resources>

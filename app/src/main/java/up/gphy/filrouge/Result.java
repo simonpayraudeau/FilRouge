@@ -38,12 +38,27 @@ public class Result extends AppCompatActivity {
             resultat(null);
         }
 
-
-
     }
 
     public void resultat(android.view.View v) {
-        txtage.setText(age.toString());
-        txtphrase.setText("Cheh");
+        txtage.setText(age.toString()+" Ans");
+
+        if (age==0){
+            txtphrase.setText("01000101 01110010 01110010 01100101 01110101 01110010");
+        }else if (age <0){
+            txtphrase.setText("Vous êtes encore vivant, cela relève du miracle");
+        }else if (age <25){
+            txtphrase.setText("Profitez c’est que du bonus");
+        }else if (age <40){
+            txtphrase.setText("Tu as la même hygiène de vie qui Benoit Paire toi");
+        }else if (age <60){
+            txtphrase.setText("C’est con de cotiser toute sa vie pour ne pas en profiter");
+        }else if (age <80){
+            txtphrase.setText("Tu auras le temps de faire du jardin");
+        }else if (age <100){
+            txtphrase.setText("Inscris toi en maison de retraite");
+        }else if (age >1000){
+            txtphrase.setText("Tu dois descendre de la tortue");
+        }
     }
 }

@@ -101,10 +101,11 @@
 
             <TextView
                 android:id="@+id/txtquest14"
-                android:layout_width="380dp"
+                android:layout_width="0dp"
                 android:layout_height="56dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
                 android:fontFamily="casual"
                 android:text="@string/_14_how_many_times_do_you_brush_your_teeth_per_day"
                 android:textColor="#FFFFFF"

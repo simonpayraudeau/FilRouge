@@ -8,7 +8,6 @@
     <string name="_6_how_much_time_do_you_spend_watching_tv_netflix_per_week">7 - Combien de temps passez-vous devant la télé/Netflix par semaine ?</string>
     <string name="_7_do_you_smoke">8 - Est-ce que vous fumez ?</string>
     <string name="_9_what_is_your_relationship_with_alcohol">9 - Quelle est votre relation avec l’alcool ?</string>
-    <string name="_10_are_you_fucking_ingrid">10 - Est-ce que tu baises Ingrid ?</string>
     <string name="resultchoose">Résultat</string>
     <string name="everyday">Tous les jours</string>
     <string name="only_in_party">Seulement en soirée</string>
@@ -50,4 +49,5 @@
     <string name="exit">Fin</string>
     <string name="_5_where_do_you_live">5 - Où vivez-vous ?</string>
     <string name="life_expectancy_simulator">Simulateur d\'espérance de vie</string>
+    <string name="_10_do_you_practice_coitus">10 - Pratiquez-vous le coït ?</string>
 </resources>
