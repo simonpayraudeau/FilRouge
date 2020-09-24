@@ -53,4 +53,13 @@
     <string name="_5_where_do_you_live">5 - Where do you live ?</string>
     <string name="life_expectancy_simulator">Life expectancy simulator</string>
     <string name="_10_do_you_practice_coitus">10 - Do you practice coitus?</string>
+    <string name="e_mail" translatable="false">E-mail :</string>
+    <string name="name" translatable="false"><![CDATA[<Name>]]></string>
+    <string name="last_name">Last Name :</string>
+    <string name="first_name">First Name :</string>
+    <string name="date_of_birth">Date of Birth :</string>
+    <string name="_01_01_2020" translatable="false">01/01/2020</string>
+    <string name="first_nameEdt" translatable="false"><![CDATA[<First Name>]]></string>
+    <string name="information" translatable="false">Information</string>
+    <string name="j_k_com" translatable="false"><![CDATA[<j@k.com>]]></string>
 </resources>
