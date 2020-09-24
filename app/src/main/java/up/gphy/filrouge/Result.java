@@ -4,12 +4,14 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -30,6 +32,10 @@ public class Result extends AppCompatActivity {
     private Float value;
 
     public static String TAG = "Resultat";// Identifiant pour les messages de log
+    private String nom;
+    private String prenom;
+    private String date;
+    private String mail;
     private Integer age;
 
     @Override
@@ -43,15 +49,27 @@ public class Result extends AppCompatActivity {
         txtphrase = findViewById(R.id.txtphrase);
         rtbar = findViewById(R.id.rtbar);
 
-        Log.d(TAG, "recuperer age");
         Intent intent = getIntent();
-        if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
-            String str = intent.getStringExtra("age"); // récupère la valeur associée à la clé
-            age = Integer.parseInt(str);
-            resultat(null);
+        if (intent.hasExtra("nom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            nom = intent.getStringExtra("nom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("prenom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            prenom = intent.getStringExtra("prenom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("mail")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            mail = intent.getStringExtra("mail"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
         }
 
         verifyStoragePermissions(this);
+        resultat(null);
+        sendEmail();
+    }
+
+    public void toast(String msg) {
+        Toast.makeText(this, msg,Toast.LENGTH_SHORT).show();
     }
 
     public void resultat(android.view.View v) {
@@ -116,6 +134,28 @@ public class Result extends AppCompatActivity {
             Log.e(TAG, "Error I/O", e);
         }
 
+    }
+
+    public void sendEmail() {
+        Log.i("Send email", "");
+        String[] TO = {mail};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Result Life Expectancy Simulation");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Your result is : "+ age);
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending email", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            toast("There is no email client installed.");
+        }
     }
 
     public void getRating (View view){

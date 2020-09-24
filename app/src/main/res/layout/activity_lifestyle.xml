@@ -296,7 +296,7 @@
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="casual"
-                android:onClick="GoPage3"
+                android:onClick="GoPage4"
                 android:text="@string/next_page"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

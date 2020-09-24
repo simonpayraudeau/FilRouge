@@ -38,13 +38,17 @@ public class Hobbies extends AppCompatActivity {
     private TextView txtno;
     private TextView txtrep6;
     private TextView txtrep7;
+
+    private String nom;
+    private String prenom;
+    private String date;
+    private String mail;
     private Integer age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hobbies);
-        Log.d(TAG,"start");
 
         txtcat2 = findViewById(R.id.txtcat2);
         txtquest6 = findViewById(R.id.txtquest6);
@@ -69,14 +73,18 @@ public class Hobbies extends AppCompatActivity {
 
         rbrep8a.setChecked(true);
 
-        Log.d(TAG,"Fin création");
-
-        Log.d(TAG, "recuperer age");
         Intent intent = getIntent();
-        if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
-            String str = intent.getStringExtra("age"); // récupère la valeur associée à la clé
-            age = Integer.parseInt(str);
-            Log.d(TAG, "age ok");
+        if (intent.hasExtra("nom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            nom = intent.getStringExtra("nom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("prenom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            prenom = intent.getStringExtra("prenom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("mail")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            mail = intent.getStringExtra("mail"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
         }
 
         setSkrep6();
@@ -121,8 +129,15 @@ public class Hobbies extends AppCompatActivity {
         calculAge(view);
         Log.d(TAG,"Go page 3");
         Intent intent = new Intent(this, Lifestyle.class);
-        Log.d(TAG, "sauvegarde age");
-        intent.putExtra("age", age.toString()); // ajout du couple nom/valeur dans le dictionnaire
+        intent.putExtra("age", age.toString());
+        intent.putExtra("nom", nom);
+        intent.putExtra("prenom", prenom);
+        intent.putExtra("date", date);
+        intent.putExtra("mail", mail);
+        Log.d(TAG,"nom : "+ nom );
+        Log.d(TAG,"date : "+ date );
+        Log.d(TAG,"prenom : "+ prenom );
+        Log.d(TAG,"mail : "+ mail );
         startActivity(intent);
     }
 

@@ -37,6 +37,11 @@ public class Lifestyle extends AppCompatActivity {
     private Spinner spirep17;
     private Button btnNextPage;
 
+    private String nom;
+    private String prenom;
+    private String date;
+    private String mail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,11 +67,18 @@ public class Lifestyle extends AppCompatActivity {
         spirep17 = findViewById(R.id.spirep17);
         btnNextPage = findViewById(R.id.btnNextPage);
 
-        Log.d(TAG, "recuperer age");
         Intent intent = getIntent();
-        if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
-            String str = intent.getStringExtra("age"); // récupère la valeur associée à la clé
-            age = Integer.parseInt(str);
+        if (intent.hasExtra("nom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            nom = intent.getStringExtra("nom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("prenom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            prenom = intent.getStringExtra("prenom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("mail")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            mail = intent.getStringExtra("mail"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
         }
 
         setSkRep14();
@@ -110,11 +122,19 @@ public class Lifestyle extends AppCompatActivity {
         Toast.makeText(this, msg,Toast.LENGTH_SHORT).show();
     }
 
-    public void GoPage3(View view) {
+    public void GoPage4(View view) {
         calculAge(view);
         Log.d(TAG,"Go page 4");
         Intent intent = new Intent(this, AtWork.class);
         intent.putExtra("age", age.toString());
+        intent.putExtra("nom", nom);
+        intent.putExtra("prenom", prenom);
+        intent.putExtra("date", date);
+        intent.putExtra("mail", mail);
+        Log.d(TAG,"nom : "+ nom );
+        Log.d(TAG,"date : "+ date );
+        Log.d(TAG,"prenom : "+ prenom );
+        Log.d(TAG,"mail : "+ mail );
         startActivity(intent);
     }
 

@@ -37,6 +37,10 @@ public class AboutYou extends AppCompatActivity {
     private Button btnnextAY;
 
     public static String TAG = "GMD About You";// Identifiant pour les messages de log
+    private String nom;
+    private String prenom;
+    private String date;
+    private String mail;
     private Integer age;
 
     @Override
@@ -74,6 +78,19 @@ public class AboutYou extends AppCompatActivity {
             }
         });
 
+        Intent intent = getIntent();
+        if (intent.hasExtra("nom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            nom = intent.getStringExtra("nom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("prenom")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            prenom = intent.getStringExtra("prenom"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("mail")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            mail = intent.getStringExtra("mail"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
+        }
 
     }
 
@@ -86,6 +103,14 @@ public class AboutYou extends AppCompatActivity {
         Log.d(TAG,"Go page 2");
         Intent intent = new Intent(this, Hobbies.class);
         intent.putExtra("age", age.toString());
+        intent.putExtra("nom", nom);
+        intent.putExtra("prenom", prenom);
+        intent.putExtra("date", date);
+        intent.putExtra("mail", mail);
+        Log.d(TAG,"nom : "+ nom );
+        Log.d(TAG,"date : "+ date );
+        Log.d(TAG,"prenom : "+ prenom );
+        Log.d(TAG,"mail : "+ mail );
         startActivity(intent);
     }
 
@@ -160,7 +185,7 @@ public class AboutYou extends AppCompatActivity {
     public void nonBinaire (){
         age = 0;
         Intent intent = new Intent(this, Result.class);
-        intent.putExtra("age", age.toString());
+        intent.putExtra("age", age);
         startActivity(intent);
     }
 }
