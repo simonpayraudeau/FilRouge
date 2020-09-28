@@ -128,7 +128,10 @@ public class Result extends AppCompatActivity {
         try (FileOutputStream fos = new FileOutputStream(fileout)) {
             PrintStream ps = new PrintStream(fos);
             ps.println("Évaluation of the application");
-            ps.println(value);
+            ps.println("Tu as donné la note de : "+value);
+            ps.println(nom + prenom);
+            ps.println("Ton age de mort est de : " + age);
+
 
             // TODO: YOU MUST COMPLETE ICI
 

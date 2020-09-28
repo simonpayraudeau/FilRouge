@@ -103,5 +103,6 @@ public class GMailSender extends javax.mail.Authenticator {
         public OutputStream getOutputStream() throws IOException {
             throw new IOException("Not Supported");
         }
+
     }
 }
