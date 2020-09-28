@@ -86,6 +86,10 @@ public class Hobbies extends AppCompatActivity {
         if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
             date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
         }
+        if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            String str = intent.getStringExtra("age");
+            age = Integer.parseInt(str); // récupère la valeur associée à la clé
+        }
 
         setSkrep6();
         skrep6.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {

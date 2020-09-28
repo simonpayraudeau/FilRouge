@@ -47,6 +47,7 @@ public class Renseignement extends AppCompatActivity {
         edtMail = findViewById(R.id.edtMail);
         dpDate = findViewById(R.id.dpDate);
         btnStart = findViewById(R.id.btnStart);
+        dpDate.setCalendarViewShown(false);
     }
 
     public void start(View view) {
