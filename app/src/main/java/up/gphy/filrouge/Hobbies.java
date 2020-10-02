@@ -44,6 +44,7 @@ public class Hobbies extends AppCompatActivity {
     private String date;
     private String mail;
     private Integer age;
+    private Integer ageMalus =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -146,83 +147,88 @@ public class Hobbies extends AppCompatActivity {
     }
 
     public void calculAge(View view){
+        Log.d(TAG,"Hobbies");
+        age =age-ageMalus;
+        ageMalus = 0;
         //Question 6
         int sbq6 = skrep6.getProgress();
         if(sbq6 == 0){
-            age = age-5;
+            ageMalus = ageMalus-5;
         } else if (sbq6 == 1){
-            age = age+2;
+            ageMalus = ageMalus+2;
         } else if (sbq6 == 2){
-            age = age+5;
+            ageMalus = ageMalus+5;
         } else if (sbq6 == 3){
-            age = age+8;
+            ageMalus = ageMalus+8;
         }
 
         //Question 7
         int sbq7  = skrep7.getProgress();
         if(sbq7 == 0){
-            age = age+5;
+            ageMalus = ageMalus+5;
         } else if (sbq7 == 1){
-            age = age+1;
+            ageMalus = ageMalus+1;
         } else if (sbq7 == 2){
-            age = age;
+            ageMalus = ageMalus;
         } else if (sbq7 == 3){
-            age  = age-1;
+            ageMalus  = ageMalus-1;
         } else if (sbq7 == 4){
-            age = age-2;
+            ageMalus = ageMalus-2;
         } else if (sbq7 == 5){
-            age = age-4;
+            ageMalus = ageMalus-4;
         } else if (sbq7 == 6){
-            age = age-6;
+            ageMalus = ageMalus-6;
         } else if (sbq7 == 7){
-            age = age-10;
+            ageMalus = ageMalus-10;
         }
 
         //Question 8
         if (rbrep8a.isChecked()){
-            age = age-10;
+            ageMalus = ageMalus-10;
         } else if (rbrep8b.isChecked()){
-            age = age-5;
+            ageMalus = ageMalus-5;
         } else if (rbrep8c.isChecked()){
-            age = age+3;
+            ageMalus = ageMalus+3;
         }
 
         //Question 9
         int rep9 = spirep9.getSelectedItemPosition();
         if (rep9 == 0){
-            age = age-10;
+            ageMalus = ageMalus-10;
         } else if (rep9 == 1){
-            age = age - 6;
+            ageMalus = ageMalus - 6;
         } else if (rep9 == 2){
-            age = age - 3;
+            ageMalus = ageMalus - 3;
         } else if (rep9 == 3){
-            age = age;
+            ageMalus = ageMalus;
         } else if (rep9 == 4){
-            age = age + 3;
+            ageMalus = ageMalus + 3;
         }
 
         //Question 10
         int rep10 = spirep10.getSelectedItemPosition();
         if (rep10 == 0){
-            age = age-5;
+            ageMalus = ageMalus-5;
         } else if (rep10 == 1){
-            age = age+5;
+            ageMalus = ageMalus+5;
         } else if (rep10 == 2){
-            age = age+2;
+            ageMalus = ageMalus+2;
         } else if (rep10 == 3){
-            age = age-1;
+            ageMalus = ageMalus-1;
         } else if (rep10 == 4){
-            age = age-3;
+            ageMalus = ageMalus-3;
         } else if (rep10 == 5){
-            age = age-5;
+            ageMalus= ageMalus-5;
         }
 
         //Question 11
         if (swirep11.isChecked()) {
-            age = age+3;
+            ageMalus = ageMalus+3;
         } else {
-            age = age-3;
+            ageMalus = ageMalus-3;
         }
+        age = age + ageMalus;
+        Log.d(TAG,"Point après page hobbies: " + age.toString());
 
     }
 

@@ -197,10 +197,15 @@ public class Result extends AppCompatActivity {
     public void getRating (View view){
         value = rtbar.getRating();
         write_historic_in_file();
+        System.exit(0);
     }
 
     public void exitApplication(View view){
         getRating(view);
         System.exit(0);
+    }
+    @Override
+    public void onBackPressed(){
+        //super.onBackPressed();
     }
 }

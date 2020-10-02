@@ -31,6 +31,7 @@ public class AtWork extends AppCompatActivity {
     private String date;
     private String mail;
     private Integer age;
+    private Integer ageMalus =0;
 
     public static String TAG = "GMD At work";// Identifiant pour les messages de log
 
@@ -77,6 +78,7 @@ public class AtWork extends AppCompatActivity {
         Log.d(TAG,"Go Result");
         Intent intent = new Intent(this, Result.class);
         intent.putExtra("age", age.toString());
+        intent.putExtra("ageMalus", ageMalus.toString());
         intent.putExtra("nom", nom);
         intent.putExtra("prenom", prenom);
         intent.putExtra("date", date);
@@ -90,37 +92,39 @@ public class AtWork extends AppCompatActivity {
 
     public void calculAge(android.view.View v) {
         Log.d(TAG, "At Work");
+        age =age-ageMalus;
+        ageMalus = 0;
 
         //Question18
         if(swr18.isChecked()){
-            age = age -5;
+            ageMalus = ageMalus -5;
         }else{
-            age = age;
+            ageMalus = ageMalus;
         }
 
         //Question19
         if (rbr19a.isChecked()) {
-            age = age-3;
+            ageMalus = ageMalus-3;
         }
         else if (rbr19b.isChecked()){
-            age = age +3;
+            ageMalus = ageMalus +3;
         }
 
         //Question20
         Integer value20 = spinr20.getSelectedItemPosition();
         if (value20==0) {
-            age = age -5;
+            ageMalus = ageMalus -5;
         }
         else if (value20==1){
-            age = age;
+            ageMalus = ageMalus;
         }
         else if (value20==2){
-            age = age -15;
+            ageMalus = ageMalus -15;
         }
         else if (value20==3){
-            age = age +5;
+            ageMalus = ageMalus +5;
         }
-
+        age = age + ageMalus;
         Log.d(TAG,"Point après page at work : " +age.toString());
 
     }

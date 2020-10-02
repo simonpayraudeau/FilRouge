@@ -17,7 +17,7 @@ public class Lifestyle extends AppCompatActivity {
 
     public static String TAG = "Page3"; // Identifiant pour les messages de log
     private Integer age;
-
+    private Integer ageMalus =0;
     private TextView txtTitre;
     private TextView txtquest12;
     private Spinner spirep12;
@@ -144,88 +144,91 @@ public class Lifestyle extends AppCompatActivity {
 
     public void calculAge(android.view.View v) {
         Log.d(TAG,"Lifestyle");
+        age = age - ageMalus;
+        ageMalus = 0;
 
         //Question12
         Integer value12 = spirep12.getSelectedItemPosition();
         if (value12==0) {
-            age = age +5;
+            ageMalus = ageMalus +5;
         }
         else if (value12==1){
-            age = age +3;
+            ageMalus = ageMalus +3;
         }
         else if (value12==2){
-            age = age;
+            ageMalus = ageMalus;
         }
         else if (value12==3){
-            age = age -5;
+            ageMalus = ageMalus -5;
         }
         else if (value12==4){
-            age = age -10;
+            ageMalus = ageMalus -10;
         }
 
         //Question13
         Integer value13 = spirep12.getSelectedItemPosition();
         if (value13==0) {
-            age = age -5;
+            ageMalus = ageMalus -5;
         }
         else if (value13==1){
-            age = age;
+            ageMalus = ageMalus;
         }
         else if (value13==2){
-            age = age -15;
+            ageMalus = ageMalus -15;
         }
         else if (value13==3){
-            age = age +5;
+            ageMalus = ageMalus +5;
         }
 
         //Question14
         if(skrep14.getProgress()==0){
-            age = age -8;
+            ageMalus = ageMalus -8;
         }else if (skrep14.getProgress()==1){
-            age = age -4;
+            ageMalus = ageMalus -4;
         }else if (skrep14.getProgress()==2){
-            age = age;
+            ageMalus = ageMalus;
         } else if (skrep14.getProgress()==3){
-            age = age +4;
+            ageMalus = ageMalus +4;
         }
 
         //Question15
         if(skrep15.getProgress()==0){
-            age = age -20;
+            ageMalus = ageMalus -20;
         }else if (skrep15.getProgress()==1){
-            age = age -5;
+            ageMalus = ageMalus -5;
         }else if (skrep15.getProgress()==2){
-            age = age -2;
+            ageMalus = ageMalus -2;
         }else if (skrep15.getProgress()==3){
-            age = age +1;
+            ageMalus = ageMalus +1;
         }else if (skrep15.getProgress()==4){
-            age = age -2;
+            ageMalus = ageMalus -2;
         }
 
         //Question16
         if(swrep16.isChecked()){
-            age = age -5;
+            ageMalus = ageMalus -5;
         }else{
-            age = age +5;
+            ageMalus = ageMalus +5;
         }
 
         //Question17
         Integer value17 = spirep12.getSelectedItemPosition();
         if (value17==0) {
-            age = age -2;
+            ageMalus = ageMalus -2;
         }
         else if (value17==1){
-            age = age+2;
+            ageMalus = ageMalus+2;
         }
         else if (value17==2){
-            age = age -2;
+            ageMalus = ageMalus -2;
         }
         else if (value17==3){
-            age = age -4;
+            ageMalus = ageMalus -4;
         }
         else if (value17==4){
-            age = age -6;
+            ageMalus = ageMalus -6;
         }
+        age = age + ageMalus;
         Log.d(TAG,"Point après page lifestyle : " + age.toString());
     }
 
