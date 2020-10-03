@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+            }
     }
 
     public void toast(String msg) {
@@ -26,5 +30,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG,"do connect");
         Intent intent = new Intent(this, Renseignement.class);
         startActivity(intent);
+    }
+
+    public void closeApp(View view) {
+        finish();
     }
 }

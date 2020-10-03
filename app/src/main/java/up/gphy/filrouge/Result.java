@@ -194,16 +194,25 @@ public class Result extends AppCompatActivity {
 //        notif.notify(0, notify);
 //    }
 
-    public void getRating (View view){
+    public void finish(View view){
         value = rtbar.getRating();
         write_historic_in_file();
-        System.exit(0);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("EXIT", true);
+        finish();
+        startActivity(intent);
     }
 
-    public void exitApplication(View view){
-        getRating(view);
-        System.exit(0);
+    public void restart(View view){
+        value = rtbar.getRating();
+        write_historic_in_file();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.putExtra("RESTART", true);
+        startActivity(intent);
     }
+
     @Override
     public void onBackPressed(){
         //super.onBackPressed();

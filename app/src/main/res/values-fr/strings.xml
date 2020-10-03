@@ -53,4 +53,6 @@
     <string name="last_name">Nom de famille :</string>
     <string name="first_name">Prénom :</string>
     <string name="date_of_birth">"Date de naissance : "</string>
+    <string name="restart">Recommencer</string>
+    <string name="finish">FERMER</string>
 </resources>
