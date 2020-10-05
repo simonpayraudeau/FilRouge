@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -37,7 +38,6 @@ public class Result extends AppCompatActivity {
     private String mail;
     private Integer age;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,8 +70,6 @@ public class Result extends AppCompatActivity {
 
         verifyStoragePermissions(this);
         resultat(null);
-        //sendNotification();
-        sendGmail(null);
 
     }
 
@@ -146,43 +144,44 @@ public class Result extends AppCompatActivity {
 
     }
 
-//    public void sendEmail() {
-//        Log.i("Send email", "");
-//        String[] TO = {mail};
-//        String[] CC = {""};
-//        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-//
-//        emailIntent.setData(Uri.parse("mailto:"));
-//        emailIntent.setType("text/plain");
-//        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-//        emailIntent.putExtra(Intent.EXTRA_CC, CC);
-//        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Result Life Expectancy Simulation");
-//        emailIntent.putExtra(Intent.EXTRA_TEXT, );
-//
-//        try {
-//            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-//            finish();
-//            Log.i("Finished sending email", "");
-//        } catch (android.content.ActivityNotFoundException ex) {
-//            toast("There is no email client installed.");
-//        }
-//    }
+    public void sendEmail(View v) {
+        Log.i("Send email", "");
+        String[] TO = {mail};
+        String[] CC = {""};
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
+        emailIntent.putExtra(Intent.EXTRA_CC, CC);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Result Life Expectancy Simulation");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hey" + nom + prenom + "! \n"+
+                "Tu vas mourir à "+age+"\n Bon courage ;)");
 
-    public void sendGmail(View v) {
         try {
-            GMailSender sender = new GMailSender("guessmydeath@gmail.com", "guessmydeath2020");
-            sender.sendMail("Result Life Expectancy Simulation",//subject
-                    "Your result is : "+ age,//body
-                    "guessmydeath@gmail.com",//from
-                    mail);//to
-            Log.d(TAG,("send mail"));
-            Log.d(TAG,("the mail is : " + mail));
-        } catch (Exception e) {
-            Log.e("SendMail", e.getMessage(), e);
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+            finish();
+            Log.i("Finished sending email", "");
+        } catch (android.content.ActivityNotFoundException ex) {
+            toast("There is no email client installed.");
         }
-
     }
+
+
+//    public void sendGmail(View v) {
+//        try {
+//            GMailSender sender = new GMailSender("guessmydeath@gmail.com", "guessmydeath2020");
+//            sender.sendMail("Result Life Expectancy Simulation",//subject
+//                    "Your result is : "+ age,//body
+//                    "guessmydeath@gmail.com",//from
+//                    mail);//to
+//            Log.d(TAG,("send mail"));
+//            Log.d(TAG,("the mail is : " + mail));
+//        } catch (Exception e) {
+//            Log.e("SendMail", e.getMessage(), e);
+//        }
+//
+//    }
 
 //    public void sendNotification(){
 //        NotificationManager notif=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
