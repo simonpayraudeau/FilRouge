@@ -41,6 +41,7 @@ public class Lifestyle extends AppCompatActivity {
     private String prenom;
     private String date;
     private String mail;
+    private String phone;
 
 
     @Override
@@ -76,6 +77,9 @@ public class Lifestyle extends AppCompatActivity {
         }
         if (intent.hasExtra("mail")){ // vérifie qu'une valeur est associée à la clé “edittext”
             mail = intent.getStringExtra("mail"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("phone")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            phone = intent.getStringExtra("phone"); // récupère la valeur associée à la clé
         }
         if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
             date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
@@ -135,10 +139,12 @@ public class Lifestyle extends AppCompatActivity {
         intent.putExtra("prenom", prenom);
         intent.putExtra("date", date);
         intent.putExtra("mail", mail);
+        intent.putExtra("phone", phone);
         Log.d(TAG,"nom : "+ nom );
         Log.d(TAG,"date : "+ date );
         Log.d(TAG,"prenom : "+ prenom );
         Log.d(TAG,"mail : "+ mail );
+        Log.d(TAG,"phone : "+ phone );
         startActivity(intent);
     }
 

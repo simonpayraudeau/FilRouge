@@ -3,10 +3,10 @@
 <resources>
 
     <string-array name="array_rep20">
-        <item>Student</item>
-        <item>Minimum wage earner</item>
-        <item>Unemployed</item>
-        <item>Minimum wage &lt; x &lt; 2000</item>
+        <item>Étudiant (Pas d\'argent)</item>
+        <item>Smicard</item>
+        <item>Sans employé</item>
+        <item>Salaire minimum &lt; x &lt; 2000</item>
         <item> 2k &lt; x &lt; 3K</item>
         <item>3k &lt; x &lt; 5K</item>
         <item> &gt; 5K</item>

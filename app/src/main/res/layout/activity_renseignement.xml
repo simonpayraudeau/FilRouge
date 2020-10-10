@@ -10,7 +10,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-27dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/linearLayout3"
@@ -40,6 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="casual"
                 android:text="@string/first_name"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
@@ -56,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="casual"
                 android:text="@string/date_of_birth"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
@@ -72,6 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="casual"
                 android:text="@string/e_mail"
                 android:textColor="#FFFFFF"
                 android:textColorHighlight="#EAD3D3"
@@ -103,6 +108,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:fontFamily="casual"
+                android:hint="@string/mail"
                 android:inputType="textPersonName"
                 android:text="@string/j_k_com"
                 android:textColor="#FFFFFF"
@@ -112,7 +119,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtMail"
                 tools:layout_conversion_absoluteHeight="45dp"
                 tools:layout_conversion_absoluteWidth="210dp"
-                android:hint="Mail"/>
+                android:importantForAutofill="no" />
 
             <EditText
                 android:id="@+id/edtNom"
@@ -120,6 +127,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
+                android:fontFamily="casual"
+                android:hint="Name"
                 android:inputType="textPersonName"
                 android:text="@string/name"
                 android:textColor="#FFFFFF"
@@ -129,7 +138,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtNom"
                 tools:layout_conversion_absoluteHeight="45dp"
                 tools:layout_conversion_absoluteWidth="210dp"
-                android:hint="Name"/>
+                android:importantForAutofill="no" />
 
             <TextView
                 android:id="@+id/txtNom"
@@ -137,6 +146,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="casual"
                 android:text="@string/last_name"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
@@ -153,6 +163,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:ems="10"
+                android:fontFamily="casual"
+                android:hint="Prenom"
                 android:inputType="textPersonName"
                 android:text="@string/first_nameEdt"
                 android:textColor="#FFFFFF"
@@ -161,8 +173,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPrenom"
                 tools:layout_conversion_absoluteHeight="45dp"
-                tools:layout_conversion_absoluteWidth="210dp"
-                android:hint="Prenom"/>
+                tools:layout_conversion_absoluteWidth="210dp" />
 
             <Button
                 android:id="@+id/btnStart"
@@ -175,9 +186,40 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edtMail"
+                app:layout_constraintTop_toBottomOf="@+id/edtPhone"
                 tools:layout_conversion_absoluteHeight="48dp"
                 tools:layout_conversion_absoluteWidth="88dp" />
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="casual"
+                android:text="@string/phone_number"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtMail" />
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:fontFamily="casual"
+                android:inputType="textPersonName"
+                android:text="@string/_0123456789"
+                android:textColor="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPhone"
+                android:importantForAutofill="no" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

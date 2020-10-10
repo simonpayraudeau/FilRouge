@@ -55,5 +55,9 @@
     <string name="date_of_birth">"Date de naissance : "</string>
     <string name="restart">Recommencer</string>
     <string name="finish">FERMER</string>
-    <string name="send_result_by_mail">"Envoyer résultat par mail "</string>
+    <string name="send_result_by_mail">"Envoi du résultat par mail "</string>
+    <string name="mail">Mail :</string>
+    <string name="_0123456789">0123456789</string>
+    <string name="phone_number">Numéro de téléphone :</string>
+    <string name="send_result_by_sms">Envoi du résultat par SMS</string>
 </resources>

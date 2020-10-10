@@ -2,7 +2,10 @@ package up.gphy.filrouge;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -22,15 +25,18 @@ public class Renseignement extends AppCompatActivity {
     private TextView txtNaissance;
     private TextView txtMail;
     private TextView txtTitre;
+    private TextView txtPhone;
     private EditText edtNom;
     private EditText edtPrenom;
     private EditText edtMail;
+    private EditText edtPhone;
     private DatePicker dpDate;
     private Button btnStart;
     private String nom;
     private String prenom;
     private String mail;
     private String date;
+    private String phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +48,46 @@ public class Renseignement extends AppCompatActivity {
         txtNaissance = findViewById(R.id.txtNaissance);
         txtMail = findViewById(R.id.txtMail);
         txtTitre = findViewById(R.id.txtTitre);
+        txtPhone = findViewById(R.id.txtPhone);
         edtNom = findViewById(R.id.edtNom);
         edtPrenom = findViewById(R.id.edtPrenom);
         edtMail = findViewById(R.id.edtMail);
+        edtPhone = findViewById(R.id.edtPhone);
         dpDate = findViewById(R.id.dpDate);
         btnStart = findViewById(R.id.btnStart);
         dpDate.setCalendarViewShown(false);
+
+        edtNom.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                edtNom.setText("");
+                return false;
+            }
+        });
+
+        edtPrenom.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                edtPrenom.setText("");
+                return false;
+            }
+        });
+
+        edtMail.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                edtMail.setText("");
+                return false;
+            }
+        });
+
+        edtPhone.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                edtPhone.setText("");
+                return false;
+            }
+        });
     }
 
     public void start(View view) {
@@ -58,10 +98,12 @@ public class Renseignement extends AppCompatActivity {
         intent.putExtra("prenom", prenom);
         intent.putExtra("date", date);
         intent.putExtra("mail", mail);
+        intent.putExtra("phone", phone);
         Log.d(TAG,"nom : "+ nom );
         Log.d(TAG,"date : "+ date );
         Log.d(TAG,"prenom : "+ prenom );
         Log.d(TAG,"mail : "+ mail );
+        Log.d(TAG,"phone : "+ phone );
         startActivity(intent);
     }
 
@@ -90,5 +132,6 @@ public class Renseignement extends AppCompatActivity {
         prenom = edtPrenom.getText().toString();
         date = getDateFromDatePicker(dpDate).toString();
         mail = edtMail.getText().toString();
+        phone = edtPhone.getText().toString();
     }
 }

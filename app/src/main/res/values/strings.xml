@@ -65,4 +65,8 @@
     <string name="restart">Restart</string>
     <string name="finish">FINISH</string>
     <string name="send_result_by_mail">Send result by mail</string>
+    <string name="mail">Mail</string>
+    <string name="_0123456789"><![CDATA[<0123456789>]]></string>
+    <string name="phone_number">Phone number :</string>
+    <string name="send_result_by_sms">Send result by SMS</string>
 </resources>

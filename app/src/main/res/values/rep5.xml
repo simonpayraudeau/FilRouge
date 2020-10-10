@@ -3,11 +3,11 @@
 <resources>
 
     <string-array name="array_rep5">
-        <item>Megalopolis (+100 000 inhabitants)</item>
-        <item>City (+10 000 inhabitants)</item>
-        <item>Municipality (+1000 inhabitants)</item>
-        <item>Village (-1000 inhabitants)</item>
-        <item>Slums (RIP)</item>
-        <item>At Granny\'s house at the far end of La Creuse</item>
+        <item>Mégalopole (+100 000 habitants)</item>
+        <item>Ville (+10 000 habitants)</item>
+        <item>Municipalité (+1000 habitants)</item>
+        <item>Village (-1000 habitants)</item>
+        <item>Bidonvilles (RIP)</item>
+        <item>Chez Mamie au fin fond de la Creuse</item>
     </string-array>
 </resources>

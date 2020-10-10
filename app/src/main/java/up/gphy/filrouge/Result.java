@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.RatingBar;
@@ -37,6 +38,8 @@ public class Result extends AppCompatActivity {
     private String date;
     private String mail;
     private Integer age;
+    private String phone;
+    private String phoneMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,9 @@ public class Result extends AppCompatActivity {
         }
         if (intent.hasExtra("date")){ // vérifie qu'une valeur est associée à la clé “edittext”
             date = intent.getStringExtra("date"); // récupère la valeur associée à la clé
+        }
+        if (intent.hasExtra("phone")){ // vérifie qu'une valeur est associée à la clé “edittext”
+            phone = intent.getStringExtra("phone"); // récupère la valeur associée à la clé
         }
         if (intent.hasExtra("age")){ // vérifie qu'une valeur est associée à la clé “edittext”
             String str = intent.getStringExtra("age");
@@ -123,7 +129,7 @@ public class Result extends AppCompatActivity {
     public void write_historic_in_file() {
         File folder = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         File fileout = new File(folder, "RatingFilRouge.txt");
-        try (FileOutputStream fos = new FileOutputStream(fileout)) {
+        try (FileOutputStream fos = new FileOutputStream(fileout,true)) {
             PrintStream ps = new PrintStream(fos);
             ps.println("Évaluation of the application");
             ps.println("Tu as donné la note de : "+value);
@@ -155,7 +161,7 @@ public class Result extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Result Life Expectancy Simulation");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hey" + nom + prenom + "! \n"+
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hey " + nom + prenom + "! \n"+
                 "Tu vas mourir à "+age+"\n Bon courage ;)");
 
         try {
@@ -215,5 +221,12 @@ public class Result extends AppCompatActivity {
     @Override
     public void onBackPressed(){
         //super.onBackPressed();
+    }
+
+    public void sendSMS(View v){
+        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
+        phoneMessage = "Hey " + nom + prenom + "! \n"+
+                "Tu vas mourir à "+age+"\n Bon courage ;)";
+        SmsManager.getDefault().sendTextMessage(phone, null, phoneMessage, null, null);
     }
 }
