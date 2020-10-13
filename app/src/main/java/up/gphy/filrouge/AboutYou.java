@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -72,12 +71,6 @@ public class AboutYou extends AppCompatActivity {
         rbrep3aAY.setChecked(true);
         rbrep1aAY.setChecked(true);
 
-        rbrep1cAY.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                nonBinaire();
-            }
-        });
 
         Intent intent = getIntent();
         if (intent.hasExtra("nom")){ // vérifie qu'une valeur est associée à la clé “edittext”
@@ -192,11 +185,5 @@ public class AboutYou extends AppCompatActivity {
         Log.d(TAG,"Point après page about you : " +age.toString());
     }
 
-    public void nonBinaire (){
-        age = 0;
-        Intent intent = new Intent(this, Result.class);
-        intent.putExtra("age", age);
-        startActivity(intent);
-    }
 }
 
