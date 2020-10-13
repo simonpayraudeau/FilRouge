@@ -1,7 +1,11 @@
 package up.gphy.filrouge;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -126,11 +130,29 @@ public class Lifestyle extends AppCompatActivity {
 
     }
 
+    public void vibrate(long duration_ms) {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if(duration_ms < 1)
+            duration_ms = 1;
+        if(v != null && v.hasVibrator()) {
+// Attention changement comportement avec API >= 26 (cf doc)
+            if(Build.VERSION.SDK_INT >= 26) {
+                v.vibrate(VibrationEffect.createOneShot(duration_ms,
+                        VibrationEffect.DEFAULT_AMPLITUDE));
+            }
+            else {
+                v.vibrate(duration_ms);
+            }
+        }
+// sinon il n'y a pas de mécanisme de vibration
+    }
+
     public void toast(String msg) {
         Toast.makeText(this, msg,Toast.LENGTH_SHORT).show();
     }
 
     public void GoPage4(View view) {
+        vibrate(100);
         calculAge(view);
         Log.d(TAG,"Go page 4");
         Intent intent = new Intent(this, AtWork.class);

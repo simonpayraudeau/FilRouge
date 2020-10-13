@@ -2,11 +2,16 @@ package up.gphy.filrouge;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
@@ -40,6 +45,7 @@ public class Result extends AppCompatActivity {
     private Integer age;
     private String phone;
     private String phoneMessage;
+    private MediaPlayer dead;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +83,26 @@ public class Result extends AppCompatActivity {
         verifyStoragePermissions(this);
         resultat(null);
 
+        dead= MediaPlayer.create(this,R.raw.dead);
+        dead.start();
+
+    }
+
+    public void vibrate(long duration_ms) {
+        Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        if(duration_ms < 1)
+            duration_ms = 1;
+        if(v != null && v.hasVibrator()) {
+// Attention changement comportement avec API >= 26 (cf doc)
+            if(Build.VERSION.SDK_INT >= 26) {
+                v.vibrate(VibrationEffect.createOneShot(duration_ms,
+                        VibrationEffect.DEFAULT_AMPLITUDE));
+            }
+            else {
+                v.vibrate(duration_ms);
+            }
+        }
+// sinon il n'y a pas de mécanisme de vibration
     }
 
     public void toast(String msg) {
@@ -151,6 +177,8 @@ public class Result extends AppCompatActivity {
     }
 
     public void sendEmail(View v) {
+        vibrate(100);
+        toast("Ouverture de la boite mail");
         Log.i("Send email", "");
         String[] TO = {mail};
         String[] CC = {""};
@@ -174,47 +202,30 @@ public class Result extends AppCompatActivity {
     }
 
 
-//    public void sendGmail(View v) {
-//        try {
-//            GMailSender sender = new GMailSender("guessmydeath@gmail.com", "guessmydeath2020");
-//            sender.sendMail("Result Life Expectancy Simulation",//subject
-//                    "Your result is : "+ age,//body
-//                    "guessmydeath@gmail.com",//from
-//                    mail);//to
-//            Log.d(TAG,("send mail"));
-//            Log.d(TAG,("the mail is : " + mail));
-//        } catch (Exception e) {
-//            Log.e("SendMail", e.getMessage(), e);
-//        }
-//
-//    }
-
-//    public void sendNotification(){
-//        NotificationManager notif=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-//        Notification notify=new Notification.Builder
-//                (getApplicationContext()).setContentTitle("Result Life Expectancy Simulation").setContentText("Your result is : "+ age).
-//                setContentTitle("Result Life Expectancy Simulation").setSmallIcon(R.drawable.fauch).build();
-//
-//        notify.flags |= Notification.FLAG_AUTO_CANCEL;
-//        notif.notify(0, notify);
-//    }
-
     public void finish(View view){
+        vibrate(100);
+        toast("Fin");
         value = rtbar.getRating();
         write_historic_in_file();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("EXIT", true);
+        dead.stop();
         finish();
         startActivity(intent);
+
+
     }
 
     public void restart(View view){
+        vibrate(100);
+        toast("Nouvelle simulation");
         value = rtbar.getRating();
         write_historic_in_file();
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra("RESTART", true);
+        dead.stop();
         startActivity(intent);
     }
 
@@ -224,6 +235,8 @@ public class Result extends AppCompatActivity {
     }
 
     public void sendSMS(View v){
+        vibrate(100);
+        toast("Envoie sms");
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
         phoneMessage = "Hey " + nom + prenom + "! \n"+
                 "Tu vas mourir à "+age+" ans \n Bon courage ;)";
