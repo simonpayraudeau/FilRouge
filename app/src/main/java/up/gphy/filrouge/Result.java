@@ -236,7 +236,7 @@ public class Result extends AppCompatActivity {
 
     public void sendSMS(View v){
         vibrate(100);
-        toast("Envoie sms");
+        toast("SMS envoyé");
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
         phoneMessage = "Hey " + nom + prenom + "! \n"+
                 "Tu vas mourir à "+age+" ans \n Bon courage ;)";
