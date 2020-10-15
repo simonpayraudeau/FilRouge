@@ -270,31 +270,31 @@ public class Hobbies extends AppCompatActivity {
         if(skrep6.getProgress()==0){
             txtrep6.setText("sp.. What ?");
         }else if (skrep6.getProgress()==1){
-            txtrep6.setText("1-2 per week");
+            txtrep6.setText("1-2 fois par semaine");
         }else if (skrep6.getProgress()==2){
-            txtrep6.setText("3-4 per week");
+            txtrep6.setText("3-4 fois par semaine");
         } else if (skrep6.getProgress()==3){
-            txtrep6.setText("Everyday");
+            txtrep6.setText("Tous les jours");
         }
     }
 
     public void setSkrep7(){
         if(skrep7.getProgress()==0){
-            txtrep7.setText("Never");
+            txtrep7.setText("Jamais");
         }else if (skrep7.getProgress()==1){
-            txtrep7.setText("Only during week-end");
+            txtrep7.setText("Seulement les week-ends");
         }else if (skrep7.getProgress()==2){
-            txtrep7.setText("Not every day");
+            txtrep7.setText("Pas tous les jours");
         } else if (skrep7.getProgress()==3){
-            txtrep7.setText("Only during week");
+            txtrep7.setText("Seulement la semaine");
         } else if (skrep7.getProgress()==4){
-            txtrep7.setText("One hour per day");
+            txtrep7.setText("1 heure par jour");
         } else if (skrep7.getProgress()==5){
-            txtrep7.setText("Three hours per day");
+            txtrep7.setText("3 heures par jours");
         } else if (skrep7.getProgress()==6){
-            txtrep7.setText("Six hours per day");
+            txtrep7.setText("6 heures par jours");
         } else if (skrep7.getProgress()==7){
-            txtrep7.setText("Professional bingewatcher (Marathonian)");
+            txtrep7.setText("Bingewatcher professionnel (Marathonien)");
         }
     }
 

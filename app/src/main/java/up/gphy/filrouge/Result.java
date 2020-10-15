@@ -190,7 +190,7 @@ public class Result extends AppCompatActivity {
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Result Life Expectancy Simulation");
         emailIntent.putExtra(Intent.EXTRA_TEXT, "Hey " + nom + prenom + "! \n"+
-                "Tu vas mourir à "+age+"\n Bon courage ;)");
+                "Tu vas mourir à "+age+" ans \n Bon courage ;)");
 
         try {
             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
@@ -239,7 +239,7 @@ public class Result extends AppCompatActivity {
         toast("Envoie sms");
         ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.SEND_SMS},1);
         phoneMessage = "Hey " + nom + prenom + "! \n"+
-                "Tu vas mourir à "+age+"\n Bon courage ;)";
+                "Tu vas mourir à "+age+" ans \n Bon courage ;)";
         SmsManager.getDefault().sendTextMessage(phone, null, phoneMessage, null, null);
     }
 }
