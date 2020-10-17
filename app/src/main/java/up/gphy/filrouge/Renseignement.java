@@ -39,6 +39,7 @@ public class Renseignement extends AppCompatActivity {
     private String mail;
     private String date;
     private String phone;
+    private String tlistener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,15 +63,23 @@ public class Renseignement extends AppCompatActivity {
         edtNom.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                edtNom.setText("");
-                return false;
+               tlistener = edtNom.getText().toString();
+               if (tlistener.equals("<Name>")) {
+                    edtNom.setText("");
+                   return false;
+                }
+               return false;
             }
         });
 
         edtPrenom.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                edtPrenom.setText("");
+                tlistener = edtPrenom.getText().toString();
+                if (tlistener.equals("<First Name>")) {
+                    edtPrenom.setText("");
+                    return false;
+                }
                 return false;
             }
         });
@@ -78,7 +87,11 @@ public class Renseignement extends AppCompatActivity {
         edtMail.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                edtMail.setText("");
+                tlistener = edtMail.getText().toString();
+                if (tlistener.equals("<j@k.com>")) {
+                    edtMail.setText("");
+                    return false;
+                }
                 return false;
             }
         });
@@ -86,7 +99,11 @@ public class Renseignement extends AppCompatActivity {
         edtPhone.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                edtPhone.setText("");
+                tlistener = edtPhone.getText().toString();
+                if (tlistener.equals("0123456789")) {
+                    edtPhone.setText("");
+                    return false;
+                }
                 return false;
             }
         });
